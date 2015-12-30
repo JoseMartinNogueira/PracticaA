@@ -17,5 +17,5 @@ int main() {
 		if (not b) d.push_back();
 		b = false;
 	}
-	for(int i = 0; i < n; ++i) cout >> d[i] >> endl;
+	for(int i = 0; i < n; ++i) cout << d[i] << endl;
 }
