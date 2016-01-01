@@ -1,5 +1,5 @@
 #include <iostream>
-#include <time>
+#include <time.h>
 
 using namespace std;
 
@@ -9,17 +9,16 @@ int main() {
 	cin >> n;
 	n *= 2;
 	int propdicc = rand()%n;
-	bool end();
 	int vd = 0;
 	int vnd = 0;
 	while (vd != propdicc and vnd != (n-propdicc)) {
 		if((rand()%2) == 0) {
-			cout >> rand()%propdicc;
+			cout << rand()%propdicc << endl;
 			++vd;
 		}
 		else {
 			++vnd;
-			cout >> rand()%999999;
+			cout << rand()%999999 << endl;
 		}
 	}
 }

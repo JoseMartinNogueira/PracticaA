@@ -53,12 +53,11 @@ int main() {
       dicc.close();
       ent.close();
 
-      /** INSERT FUNCTION HASH HERE */
 
       hashTable htab(diccionario.size());
       for (int i = 0; i < diccionario.size(); ++i) htab.insert(diccionario[i]);
 
-      cout << htab.contains(201) << endl;
+      for (int i = 0; i < entrada.size(); ++i) cout << htab.contains(entrada[i]) << endl;
 
 
     }
