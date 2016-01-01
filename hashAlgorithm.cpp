@@ -10,6 +10,19 @@
 
 using namespace std;
 
+int comparaciones = 0; //Numero de comparaciones que hace findsorted
+
+bool findsorted(list<int> l, int x) {
+  list<int>::iterator it = l.begin();
+  while(it != NULL) {
+    if(*it < x) {return false;
+    if(*it == x) return true;
+    ++it;
+    comparaciones++; // Contamos como que cada iteración del bucle es una comparación
+  }
+  return false;
+}
+
 hashTable::hashTable(int size) {
   theLists.resize(size);
   currentSize = 0;
@@ -18,7 +31,7 @@ hashTable::hashTable(int size) {
 
 bool hashTable::contains(const int &x) {
   const list<int> & whichList = theLists[hash(x)];
-  return find(whichList.begin(), whichList.end(), x) != whichList.end();
+  return findsorted(whichList, x);
 }
 
 
@@ -26,7 +39,7 @@ bool hashTable::insert(const int &x) {
   int hashVal = hash(x);
   cout << "ID: " << x << " - Hash Value: " << hashVal << endl;
   list<int> & iList = theLists[hashVal];
-  if(find(iList.begin(), iList.end(), x) != iList.end()) return false;
+  if(findsorted(iList, x)) return false;
   iList.push_back(x);
   currentSize++;
   return true;

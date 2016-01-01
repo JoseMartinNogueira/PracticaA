@@ -1,5 +1,5 @@
 #include <iostream>
-#include <time>
+#include <time.h>
 #include <fstream>
 #include <string>
 
