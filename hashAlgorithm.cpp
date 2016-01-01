@@ -53,7 +53,6 @@ int main() {
       dicc.close();
       ent.close();
 
-
       hashTable htab(diccionario.size());
       for (int i = 0; i < diccionario.size(); ++i) htab.insert(diccionario[i]);
 
