@@ -13,14 +13,13 @@ using namespace std;
 int comparaciones = 0; 
 
 bool findsorted(list<int> l, int x) {
-  list<int>::iterator it = l.begin();
-  while(it != NULL) {
-    if(*it < x) {return false;
-    if(*it == x) return true;
-    ++it;
+    list<int>::iterator it = l.begin();
+  while(it != l.end()) {
     comparaciones++; // Contamos como que cada iteración del bucle es una comparación
-  }
-  return false;
+    if(*it == x) return true;
+      ++it;
+    }
+      return false;
 }
 
 hashTable::hashTable(int size) {
@@ -119,9 +118,9 @@ int main() {
     cout << "Quantitat de paraules que no estaven al diccionari: " << notrobats << endl;
     cout << "Quantitat total de comparacions: " << comp << endl;
     cout << "Quantitat de comparacions fetes fent la taula: " << compTable << endl;
-    cout << "Mitjana aritmetica de les comparacions fetes fent la taula: " << compTable/comphasht.size() <<endl;
+    cout << "Mitjana aritmetica de les comparacions fetes fent la taula: " << double(compTable)/double(comphasht.size()) <<endl;
     cout << "Quantitat de comparacions fetes a la cerca: " << compCerca <<endl;
-    cout << "Mitjana aritmetica de les comparacions fetes a la cerca: " << compCerca/compvec.size() << endl;
+    cout << "Mitjana aritmetica de les comparacions fetes a la cerca: " <<  double(compCerca)/double(compvec.size()) << endl;
     cout << "Número total d'entrades diccionari: " << diccionario.size() << ", entrades text: " << entrada.size() << endl;
   }
   else cout << "Error de opertura de ficheros \n";  

@@ -2,6 +2,7 @@
 #include <time.h>
 #include <fstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,13 +15,15 @@ int main() {
 	int vd = 0;
 	int vnd = 0;
 	string linea;
-	istream diccionario ("diccionario.txt");
+	ifstream diccionario ("diccionario.txt");
 	vector<int> v;
 	if (diccionario.is_open()) {
 		while (getline (diccionario,linea)) v.push_back(stoi(linea));
 	}
-	while (vd != propdicc and vnd != (n-propdicc)) {
-		if((rand()%2) == 0) {
+  bool end = false;
+	//while (vd != propdicc and vnd != (n-propdicc)) {
+  while (not end) {
+  	if((rand()%2) == 0) {
 			cout << v[rand()%(v.size())] << endl;
 			++vd;
 		}
@@ -28,5 +31,6 @@ int main() {
 			++vnd;
 			cout << rand()%999999 << endl;
 		}
+    if(vd == propdicc and (vnd+vd) == n) end = true;  
 	}
 }
