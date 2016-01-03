@@ -35,10 +35,10 @@ int main() {
     /** Insercció dels valors del fitxers als corresponents vectors **/
     clock_t entrada_1 = clock();  
     while (getline(dicc, lineD) and getline(ent, lineE)) {
-    	diccionario.push_back(stoi(lineD));
-    	entrada.push_back(stoi(lineE));
+    	diccionario.push_back(atoi( lineD.c_str() ));
+    	entrada.push_back(atoi( lineE.c_str() ));
     }
-	  while (getline(ent, lineE)) entrada.push_back(stoi(lineE));
+	  while (getline(ent, lineE)) entrada.push_back(atoi( lineE.c_str() ));
     dicc.close();
     ent.close();
     clock_t entrada_2 = clock();
