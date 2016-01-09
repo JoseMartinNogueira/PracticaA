@@ -10,19 +10,10 @@
 
 using namespace std;
 
-int random(int min, int max) //range : [min, max)
-{
-   static bool first = true;
-   if ( first ) 
-   {  
-      srand(time(NULL)); //seeding for the first time only!
-      first = false;
-   }
-   return min + rand() % (max - min);
-}
 
 int main() {
 	srand(time(0));
+
 	int n;
 	cerr << "Introduzca la n: ";
 	cin >> n;
@@ -32,13 +23,16 @@ int main() {
 	int vd = 0;
 	int vnd = 0;
 	string linea;
-	ifstream diccionario ("diccionario.txt");
+	string d;
+	cerr << "Introdueix el nom del diccionari amb extensio .txt: ";
+	cin >> d;
+	ifstream diccionario (d);
 	vector<int> v;
 	if (diccionario.is_open()) {
 		while (getline (diccionario,linea)){
 			int Number;
 			if ( ! (istringstream(linea) >> Number) ) Number = 0;
-		 	v.push_back(Number);
+			v.push_back(Number);
 		}
 	}
   bool end = false;
