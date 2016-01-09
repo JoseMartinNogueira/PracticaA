@@ -54,5 +54,5 @@ int main() {
     if((vnd+vd) >= n) end = true;  
 	}
 
-	cerr << "Proporción de palabras del diccionari que están en el texto: " << prop*n << endl;
+	cerr << "Proporción de palabras del diccionari que están en el texto: " << prop << endl;
 }
