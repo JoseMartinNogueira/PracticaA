@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 #include <time.h>
+#include <iomanip>
+#include <locale>
+#include <sstream>
 #include <list> 
 #include "hashTable.h"
 
@@ -59,12 +62,23 @@ int main() {
   if (dicc and ent) { 
     clock_t ficheros_start = clock();
     while (getline(dicc, lineD) and getline(ent, lineE)) {
-    	diccionario.push_back(stoi(lineD));
-    	entrada.push_back(stoi(lineE));
+      string Text = lineD.c_str();
+      string Text2 = lineE.c_str();
+      int Number;
+      int Number2;
+      if ( ! (istringstream(Text) >> Number) ) Number = 0;
+      if ( ! (istringstream(Text2) >> Number2) ) Number2 = 0;
+      diccionario.push_back(Number);
+      entrada.push_back(Number2);
     }
-  	while (getline(ent, lineE)) entrada.push_back(stoi(lineE));
-      dicc.close();
-      ent.close();
+    while (getline(ent, lineE)) {
+      string Text = lineE.c_str();
+      int Number;
+      if ( ! (istringstream(Text) >> Number) ) Number = 0;
+      entrada.push_back(Number);
+    }
+    dicc.close();
+    ent.close();
     clock_t ficheros_end = clock();
     
     //Tabla Hash 

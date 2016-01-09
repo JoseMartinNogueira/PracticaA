@@ -1,6 +1,13 @@
 #include <iostream>
-#include <time.h>
+#include <fstream>
+#include <ctime>
+#include <string>
 #include <vector>
+#include <time.h>
+#include <iomanip>
+#include <locale>
+#include <sstream>
+
 using namespace std;
 
 
@@ -49,6 +56,7 @@ void ordena_per_fusio(vector<int>& v, int e, int d) {
 
 int main() {
 	int n;
+    cerr << "Introduzca la n: ";
 	cin >> n;
 	int r;
 	vector<int> d;
