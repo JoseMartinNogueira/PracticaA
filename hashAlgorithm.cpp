@@ -57,8 +57,8 @@ int main() {
   string lineD, lineE;
   vector <int> diccionario;
   vector <int> entrada;
-  ifstream dicc ("diccionario.txt");
-  ifstream ent ("entrada.txt");
+  ifstream dicc ("diccionari100000.txt");
+  ifstream ent ("entrada100000.txt");
   if (dicc and ent) { 
     clock_t ficheros_start = clock();
     while (getline(dicc, lineD) and getline(ent, lineE)) {
