@@ -60,9 +60,10 @@ int main() {
   string s;
   cerr << "Introdueix el nom del fitxer del diccionari amb la extensió .txt: ";
   cin >> s;
-  ifstream dicc (s);
+  ifstream dicc (s.c_str());
   cerr << "Introdueix el nom del fitxer d'entrada amb la extensió .txt: ";
   cin >> s;
+  ifstream ent (s.c_str());
   if (dicc and ent) { 
     clock_t ficheros_start = clock();
     while (getline(dicc, lineD) and getline(ent, lineE)) {

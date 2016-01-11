@@ -35,10 +35,10 @@ int main() {
   string s;
   cerr << "Introdueix el nom del fitxer del diccionari amb la extensió .txt: ";
   cin >> s;
-  ifstream dicc (s);
+  ifstream dicc (s.c_str());
   cerr << "Introdueix el nom del fitxer d'entrada amb la extensió .txt: ";
   cin >> s;
-  ifstream ent (s);
+  ifstream ent (s.c_str());
   if (dicc and ent) {
     /** Insercció dels valors del fitxers als corresponents vectors **/
     clock_t entrada_1 = clock();
