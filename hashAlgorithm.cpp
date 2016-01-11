@@ -57,8 +57,12 @@ int main() {
   string lineD, lineE;
   vector <int> diccionario;
   vector <int> entrada;
-  ifstream dicc ("diccionari100000.txt");
-  ifstream ent ("entrada100000.txt");
+  string s;
+  cerr << "Introdueix el nom del fitxer del diccionari amb la extensió .txt: ";
+  cin >> s;
+  ifstream dicc (s);
+  cerr << "Introdueix el nom del fitxer d'entrada amb la extensió .txt: ";
+  cin >> s;
   if (dicc and ent) { 
     clock_t ficheros_start = clock();
     while (getline(dicc, lineD) and getline(ent, lineE)) {
